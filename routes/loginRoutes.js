@@ -2,6 +2,7 @@ var mysql = require("mysql");
 var express = require("express");
 var session = require("express-session");
 var bodyParser = require("body-parser");
+var path = require("path");
 
 var connection = mysql.createConnection({
   host: "localhost",
@@ -22,8 +23,9 @@ module.exports = function(app) {
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
 
-  app.get("/", function(request, response) {
-    response.redirect("signup.html");
+  app.get("/login", function(request, response) {
+    // response.redirect("signup.html");
+    response.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
   app.post("/auth", function(request, response) {
@@ -38,7 +40,7 @@ module.exports = function(app) {
           if (results.length > 0) {
             request.session.loggedin = true;
             request.session.username = username;
-            response.redirect("/home");
+            response.redirect("/shopping.html");
           } else {
             response.send("Incorrect Username and/or Password!");
           }
@@ -51,9 +53,9 @@ module.exports = function(app) {
     }
   });
 
-  app.get("/home", function(request, response) {
+  app.get("/shopping", function(request, response) {
     if (request.session.loggedin) {
-      response.send("Welcome back, " + request.session.username + "!");
+      response.sendFile(path.join(__dirname, "../public/shopping.html"));
     } else {
       response.send("Please login to view this page!");
     }
