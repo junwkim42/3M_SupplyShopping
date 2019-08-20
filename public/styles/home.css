@@ -1,20 +1,18 @@
 html, body{
     padding: 0%;
     margin: 0%;
-    background-image: url('../images/background-home.jpg');
+    background-image: url('../images/homePageBackground.jpg');
     background-position: top;
     background-repeat: no-repeat;background-size: 100vw 100vh;
 }
 .intro-container{
     position: absolute;
-    top: 50%;
-    left: 15%;
+    top: 30%;
+    left: 30%;
     transform: translate(-15%, -50%);
-    /*background-color: red;*/
-    width: 50%;
-    /* z-index: 1; */
+    width: 60%;
     padding: 0%;
-    border-left: 5px solid #6fb42a;
+    border-left: 5px solid red;
     
 }
 .intro-background{
@@ -27,73 +25,23 @@ html, body{
 }
 h1{
     color: #FFFFFF;
-    margin: 2.5% 5%;
+    margin: 5% 5%;
     font-size: 5em;
     padding: 2% 0px;
+    font-family: 'Anton', sans-serif;
 }
 h4{
     color: #FFFFFF;
     margin: -20px auto 20px 5%;
-    font-size: 1em;
+    font-size: 2em;
     width: 70%;
     padding: 2% 0px;
+    font-family: 'Alegreya Sans SC', sans-serif;
 }
 
-/* switch box / container */
-.switch-container{
-    width: 100px;
-    height: 45px;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -70%);
-    display: inline-block;
-  }
-  /* hiding the actual checkbox */
-  input{
-    display: inline-block;
-  }
-  /* the main switch */
-  .switch-button{
-    border-radius: 20px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    transition: .4s;
-    cursor: pointer;
-    background-color: black;
-    
-  }
-  .switch-button:before{
-    content: "";
-    background-color: white;
-    height: 42px;
-    width: 42px;
-    left: 3px;
-    bottom: 2px;
-    position: absolute;
-    transition: .4s;
-    border-radius: 50%;
-  }
-  input:checked + .switch-button {
-    background-color: limegreen;
-    color: white;
-  }
-  
-  input:focus + .switch-button {
-    box-shadow: 0 0 1px #2196F3;
-  }
-  input:checked + .switch-button:before {
-    -webkit-transform: translateX(53px);
-    -ms-transform: translateX(53px);
-    transform: translateX(53px);
-  }
-  
-
-  #on-label{
+  button{
       color: #FFFFFF;
+      border: red 1px solid;
       position: absolute;
       top: 80%;
       left: 50%;
@@ -101,6 +49,8 @@ h4{
       font-size: 2em;
       background-color: #000000;
       padding: 10px;
+      font-family: 'Alegreya Sans SC', sans-serif;
+
   }
 
 
