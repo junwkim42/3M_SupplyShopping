@@ -16,8 +16,8 @@ module.exports = function(app) {
         if (results.length > 0) {
           request.session.loggedin = true;
           request.session.username = username;
-          console.log("I was here!");
-          response.redirect("/shopping2.html");
+          console.log(request.session);
+          response.json(request.session);
           response.end();
         } else {
           response.send("Incorrect Username and/or Password!");

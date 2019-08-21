@@ -1,6 +1,7 @@
 $(document).ready(function() {
   function getCart() {
     //fix to grab id
+    //var cartId = "/api/cart/" +
     $.get("/api/cart/scott", function(response) {
       console.log(response);
       if (response.length === 0) {
