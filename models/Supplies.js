@@ -1,10 +1,14 @@
 module.exports = function(sequelize, DataTypes) {
-  var Cart = sequelize.define("Cart", {
-    username: {
+  var Supplies = sequelize.define("Supplies", {
+    supply: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    item: {
+    imagelink: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    description: {
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -12,14 +16,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false
     },
-    qty: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-    itemId: {
-      type: DataTypes.INTEGER,
+    unit: {
+      type: DataTypes.STRING,
       allowNull: false
     }
   });
-  return Cart;
+  return Supplies;
 };
