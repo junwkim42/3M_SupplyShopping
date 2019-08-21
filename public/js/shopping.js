@@ -24,7 +24,8 @@ $(document).ready(function() {
         newImg.attr("alt", response[i].supply);
         newImg.css({
           maxWidth: "322px",
-          maxHeight: "322px"
+          maxHeight: "322px",
+          margin: "20px"
         });
 
         var newBody = $("<div>");
