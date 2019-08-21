@@ -12,7 +12,8 @@ $(document).ready(function() {
         newCard.addClass("col-md3 col-sm12 card");
         newCard.css({
           width: "100%",
-          maxWidth: "200px"
+          maxWidth: "200px",
+          margin: "20px"
         });
 
         var newTitle = $("<h3>");
