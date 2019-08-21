@@ -7,7 +7,7 @@ var path = require("path");
 var connection = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "",
+  password: "root",
   database: "exampledb"
 });
 
@@ -23,7 +23,7 @@ module.exports = function(app) {
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
 
-  app.get("/login", function(request, response) {
+  app.get("/login", function(_request, response) {
     // response.redirect("signup.html");
     response.sendFile(path.join(__dirname, "../public/login.html"));
   });
@@ -60,5 +60,39 @@ module.exports = function(app) {
       response.send("Please login to view this page!");
     }
     response.end();
+  });
+
+  //signup
+
+  app.get("/signup", function(_request, response) {
+    response.sendFile(__dirname + "/" + "signup.html");
+  });
+
+
+  app.post("/process_get", function(request, res) {
+    var response = {
+      username: request.body.username,
+      password: request.body.password,
+      department: request.body.department
+    };
+    console.log( `[process_get] logging in with: `, response );
+    var addSqlParams = [
+      response.username,
+      response.password,
+      response.department
+    ];
+    var addSql =
+    "INSERT INTO accounts(username,password,department) VALUES(?,?,?)";
+    connection.query(addSql, addSqlParams, function(err) {
+      if (err) {
+        console.log("[INSERT ERROR] - ", err.message);
+        res.end("0");
+        return;
+      }
+      
+      console.log("OK");
+    });
+    console.log(response);
+    res.redirect("/login");
   });
 };
