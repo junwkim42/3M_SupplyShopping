@@ -1,19 +1,17 @@
 $(document).ready(function() {
   $("#submitbutton").on("click", function() {
     $.post(
-      "/auth",
+      "/process_get",
       {
         username: $("#un").val(),
         password: $("#pw").val(),
         department: $("#dp").val()
       },
       function(response) {
-        if (response.login) {
+        console.log(response);
+        if (response.status) {
           alert(response.msg);
-          sessionStorage.setItem("username", response.sess.username);
-          sessionStorage.setItem("loggedin", response.sess.loggedin);
-          sessionStorage.setItem("userid", response.sess.userid);
-          window.location.replace("http://localhost:3000/shopping");
+          window.location.replace("http://localhost:3000/login");
         } else {
           alert(response.msg);
         }

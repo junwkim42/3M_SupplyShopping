@@ -1,9 +1,22 @@
 $(document).ready(function() {
-  $("#exampleModal").on("shown.bs.modal", function() {
-    $("#exampleFormControlSelect1").trigger("focus");
-  });
-
   function getSupplies() {
+    function generateResponse(num) {
+      return function() {
+        var orderQty = {
+          username: sessionStorage.getItem("username"),
+          userId: sessionStorage.getItem("userid"),
+          item: document.getElementById("itemname" + num).textContent,
+          price: parseFloat(
+            document.getElementById("itemprice" + num).textContent
+          ),
+          qty: document.getElementById("selection" + num).value
+        };
+        console.log(orderQty);
+        $.post("/api/cart", orderQty, function(response) {
+          console.log(response);
+        });
+      };
+    }
     $.get("/api/supplies", function(response) {
       //console.log(response);
       for (var i = 0; i < response.length; i++) {
@@ -17,6 +30,7 @@ $(document).ready(function() {
         });
 
         var newTitle = $("<h3>");
+        newTitle.attr("id", "itemname" + i);
         newTitle.text(response[i].supply);
 
         var newImg = $("<img>");
@@ -34,7 +48,8 @@ $(document).ready(function() {
 
         var newPrice = $("<h5>");
         newPrice.addClass("card-title");
-        newPrice.text(response[i].price + response[i].unit);
+        newPrice.attr("id", "itemprice" + i);
+        newPrice.text("$" + response[i].price + "/" + response[i].unit);
 
         var newButton = $("<button>");
         newButton.addClass("btn btn-dark");
@@ -42,7 +57,7 @@ $(document).ready(function() {
         newButton.attr("data-toggle", "modal");
         // data-target has to match with id of modal (line 56)
         newButton.attr("data-target", "#itemModal" + i);
-        newButton.text("ADD TO CART");
+        newButton.text("ORDER ITEM");
 
         newBody.append(newPrice);
         newBody.append(newButton);
@@ -94,7 +109,7 @@ $(document).ready(function() {
 
         var formControl = $("<select>");
         formControl.addClass("form-control");
-        formControl.attr("id", i);
+        formControl.attr("id", "selection" + i);
 
         for (var j = 1; j < 6; j++) {
           var options = $("<option>");
@@ -106,8 +121,9 @@ $(document).ready(function() {
         //edit later to send post call to cart on click
         // html id + 1 = mySQL database id
         var modalButtonAdd = $("<button>");
-        modalButtonAdd.addClass("btn btn-dark");
+        modalButtonAdd.addClass("btn btn-dark addcart");
         modalButtonAdd.attr("data-dismiss", "modal");
+        modalButtonAdd.attr("id", "add" + i);
         modalButtonAdd.text("ADD TO CART");
 
         modalButtonX.append(modalSpan);
@@ -130,8 +146,13 @@ $(document).ready(function() {
         $("#main-container").append(newCard);
         $("#main-container").append(newModal);
       }
+
+      for (var j = 0; j < response.length; j++) {
+        $("#add" + j).on("click", generateResponse(j));
+      }
     });
   }
 
+  //console.log(sessionStorage.getItem("username"));
   getSupplies();
 });

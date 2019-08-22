@@ -4,6 +4,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
+    userid: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
     item: {
       type: DataTypes.STRING,
       allowNull: false
@@ -13,10 +17,6 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     qty: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-    itemId: {
       type: DataTypes.INTEGER,
       allowNull: false
     }

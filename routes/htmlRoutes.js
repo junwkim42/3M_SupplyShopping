@@ -1,14 +1,6 @@
 var path = require("path");
 
 module.exports = function(app) {
-  /* app.get("/signup", function(req, res) {
-    res.render("signup", {});
-  }); */
-
-  // app.get("/login", function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/login.html"));
-  // });
-
   // Load index page
   app.get("/", function(req, res) {
     if (req.session.loggedin) {
@@ -19,13 +11,17 @@ module.exports = function(app) {
   });
 
   app.get("/cart", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/cart.html"));
+    if (req.session.loggedin) {
+      res.sendFile(path.join(__dirname, "../public/cart.html"));
+    } else {
+      res.send("Please login to view this page!");
+    }
   });
-  /*
-  app.get("/shopping", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/shopping2.html"));
+
+  app.get("/signup", function(request, response) {
+    response.sendFile(path.join(__dirname, "../public/signup.html"));
   });
-*/
+
   app.get("/login", function(request, response) {
     // response.redirect("signup.html");
     response.sendFile(path.join(__dirname, "../public/login.html"));
@@ -37,12 +33,8 @@ module.exports = function(app) {
     } else {
       response.send("Please login to view this page!");
     }
-    response.end();
   });
-  // Render 404 page for any unmatched routes
-  // app.get("*", function(req, res) {
-  //   res.render("404");
-  // });
+
   /*
   app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/home.html"));

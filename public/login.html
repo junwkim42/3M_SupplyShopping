@@ -7,16 +7,23 @@
 		<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC&display=swap" rel="stylesheet">
 		<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	</head>
 	<body>
 		<div class="login-form">
 			<h1>Login Form</h1>
-			<form>
+
 				<input type="text" name="username" id="un" placeholder="Username" required>
 				<input type="password" name="password" id="pw" placeholder="Password" required>
-				<input type="text" name="department" id="dp" placeholder="Department" required>
+				<select class="custom-select" name="department" id="dp" style="margin-bottom: 15px; height:55px;">
+						<option value="sales">Sales</option>
+						<option value="financial">Financial</option>
+						<option value="it">IT</option>
+						<option value="marketing">Marketing</option>
+						<option value="supply">Supply</option>
+				</select>
 				<input type="submit" id="submitbutton">
-			</form>
+
 			<a href="signup.html" rel="external nofollow" ><h2>create an account</h2></a>
 		</div>
 	</body>
