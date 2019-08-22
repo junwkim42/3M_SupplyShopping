@@ -61,6 +61,18 @@ h4{
     transform: translateX(-50%);
     width:90%;
     }
+    button{
+      color: #FFFFFF;
+      border: red 1px solid;
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -80%);
+      font-size: 4em;
+      background-color: #000000;
+      padding: 10px;
+      font-family: 'Alegreya Sans SC', sans-serif;
+  }
  }
 
 
@@ -72,26 +84,7 @@ h4{
     transform: translate(-50%, -50%);
     width: 90%;
   }
-  .switch-container{
-    width: 100px;
-    height: 45px;
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -65%);
-    display: inline-block;
-  }
-  #on-label{
-    color: #FFFFFF;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -70%);
-    font-size: 2em;
-    background-color: #000000;
-    padding: 10px;
 }
-  }
   
   
   /* Tablet Layout: 768px. */
@@ -104,24 +97,17 @@ h4{
       transform: translate(-50%, -50%);
       width: 95%;
     }
-    .switch-container{
-      width: 100px;
-      height: 45px;
-      position: absolute;
-      top: 75%;
-      left: 50%;
-      transform: translate(-50%, -75%);
-      display: inline-block;
-    }
-    #on-label{
+    button{
       color: #FFFFFF;
+      border: red 1px solid;
       position: absolute;
-      top: 85%;
+      top: 80%;
       left: 50%;
-      transform: translate(-50%, -85%);
+      transform: translate(-50%, -80%);
       font-size: 2em;
       background-color: #000000;
       padding: 10px;
+      font-family: 'Alegreya Sans SC', sans-serif;
   }
   }
   
@@ -149,31 +135,15 @@ h4{
       width: 90%;
   }
   
-  /* switch box / container */
-  .switch-container{
-      width: 100px;
-      height: 45px;
-      position: absolute;
-      bottom: 10%;
-      left: 50%;
-      transform: translate(-50%, 10%);
-      display: inline-block;
-    }
-    #on-label{
-        position: absolute;
-        bottom: 5%;
-        left: 50%;
-        transform: translate(-50%, 5%);
-        font-size: 1.5em;
-        width: 90%;
-        text-align: center
-    }
-  
-  }
-  
-  /* Wide Mobile Layout: 480px. */
-  
-  @media only screen and (min-width: 480px) and (max-width: 767px) {
-  
-  
+  button{
+    color: #FFFFFF;
+    border: red 1px solid;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    font-size: 1em;
+    background-color: #000000;
+    padding: 10px;
+    font-family: 'Alegreya Sans SC', sans-serif;
   }
