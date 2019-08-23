@@ -7,13 +7,16 @@ $(document).ready(function() {
           userId: sessionStorage.getItem("userid"),
           item: document.getElementById("itemname" + num).textContent,
           price: parseFloat(
-            document.getElementById("itemprice" + num).textContent
+            document.getElementById("itemprice" + num).textContent.slice(1)
           ),
           qty: document.getElementById("selection" + num).value
         };
-        console.log(orderQty);
         $.post("/api/cart", orderQty, function(response) {
-          console.log(response);
+          if (response.success) {
+            alert("Added to Cart!");
+          } else {
+            alert("An error has occurred. Contact system admin");
+          }
         });
       };
     }
@@ -22,10 +25,9 @@ $(document).ready(function() {
       for (var i = 0; i < response.length; i++) {
         // make card
         var newCard = $("<div>");
-        newCard.addClass("col-md3 col-sm12 card");
+        newCard.addClass("col-md-3 col-sm-12 card");
         newCard.css({
           width: "100%",
-          maxWidth: "200px",
           margin: "20px"
         });
 
@@ -37,12 +39,13 @@ $(document).ready(function() {
         newImg.attr("src", response[i].imagelink);
         newImg.addClass("card-img-top");
         newImg.attr("alt", response[i].supply);
+        /*
         newImg.css({
           maxWidth: "322px",
           maxHeight: "322px",
           margin: "20px"
         });
-
+        */
         var newBody = $("<div>");
         newBody.addClass("card-body");
 

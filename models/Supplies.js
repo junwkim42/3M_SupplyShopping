@@ -23,3 +23,15 @@ module.exports = function(sequelize, DataTypes) {
   });
   return Supplies;
 };
+
+/*
+,
+    category: {
+      type: DataTypes.String,
+      allowNull: false
+    },
+    stock: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    }
+*/
