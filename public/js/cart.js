@@ -123,5 +123,8 @@ $(document).ready(function() {
     alert("Your order has been submitted!");
     window.location.reload(true);
   });
+  document.getElementById("user-menu").innerHTML = sessionStorage
+    .getItem("username")
+    .toUpperCase();
   getCart();
 });

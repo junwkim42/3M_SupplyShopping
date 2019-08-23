@@ -1,7 +1,7 @@
 body {
     padding: 0%;
     margin: 0%;
-    background-image: url('../images/smokes.jpg');
+    background-image: linear-gradient(black,#2f3640,#353b48,#718093,#bdc3c7);
     background-position: top;
     background-attachment: fixed;
     background-repeat: no-repeat;background-size: 100vw 100vh;
@@ -11,7 +11,7 @@ body {
 .jumbotron {
     padding: 0%;
     margin: 0%;
-    background-image: url('../images/smokes.jpg');
+    background-image: linear-gradient(black,#2f3640,#353b48,#718093,#bdc3c7);
     background-position: top;
     background-attachment: fixed;
     background-repeat: no-repeat;background-size: 100vw 100vh;
@@ -31,3 +31,29 @@ body {
     font-family: 'Fjalla One', sans-serif;
     font-size: 30px;
 }
+
+.navbar-nav{
+    /* display: block; */
+    margin: auto;
+    width: 50%;
+  }
+  .navbar a{
+    font-size:20px;
+    color: white !important;
+    text-transform:uppercase;
+    padding: 0 18px;
+    text-decoration:none;
+    font-weight:700;
+    text-shadow: 0 0 20px grey;
+  }
+  
+  .dropdown-menu {
+    background-color: black;
+  }
+  .nav-item{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    margin: 0 auto;
+  }
+  
