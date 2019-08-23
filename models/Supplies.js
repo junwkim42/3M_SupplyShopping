@@ -19,19 +19,15 @@ module.exports = function(sequelize, DataTypes) {
     unit: {
       type: DataTypes.STRING,
       allowNull: false
-    }
-  });
-  return Supplies;
-};
-
-/*
-,
+    },
     category: {
-      type: DataTypes.String,
+      type: DataTypes.STRING,
       allowNull: false
     },
     stock: {
       type: DataTypes.INTEGER,
       allowNull: false
     }
-*/
+  });
+  return Supplies;
+};

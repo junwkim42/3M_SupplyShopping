@@ -11,7 +11,10 @@ $(document).ready(function() {
         console.log(response);
         if (response.status) {
           alert(response.msg);
-          window.location.replace("http://localhost:3000/login");
+          var lastIndex = window.location.href.lastIndexOf("/");
+          window.location.replace(
+            window.location.href.substring(0, lastIndex) + "/login"
+          );
         } else {
           alert(response.msg);
         }

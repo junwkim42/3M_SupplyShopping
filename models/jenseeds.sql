@@ -1,1 +1,0 @@
-INSERT INTO supplies (supply, imagelink, description, price, unit, createdAt, updatedAt) VALUES ("Black Toner", "./images/toner1.jpg", "Item description: Black toner with high yield of approximately 1,600 pages", 99.99, "/Cartridge", "2019-08-20", "2019-08-20");

@@ -34,7 +34,6 @@ module.exports = function(app) {
       response.send("Please login to view this page!");
     }
   });
-
   /*
   app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/home.html"));

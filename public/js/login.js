@@ -9,11 +9,13 @@ $(document).ready(function() {
       },
       function(response) {
         if (response.login) {
-          alert(response.msg);
           sessionStorage.setItem("username", response.sess.username);
           sessionStorage.setItem("loggedin", response.sess.loggedin);
           sessionStorage.setItem("userid", response.sess.userid);
-          window.location.replace("http://localhost:3000/shopping");
+          var lastIndex = window.location.href.lastIndexOf("/");
+          window.location.replace(
+            window.location.href.substring(0, lastIndex) + "/shopping"
+          );
         } else {
           alert(response.msg);
         }

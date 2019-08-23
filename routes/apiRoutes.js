@@ -69,4 +69,17 @@ module.exports = function(app) {
       res.json(response);
     });
   });
+
+  app.get("/api/supplies/:category", function(req, res) {
+    db.Supplies.findAll({ where: { category: req.params.category } }).then(
+      function(response) {
+        res.json(response);
+      }
+    );
+  });
+
+  app.get("/api/logout", function(req, res) {
+    req.session.destroy();
+    res.redirect("/");
+  });
 };

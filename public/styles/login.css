@@ -41,3 +41,49 @@ h2{
     color:white;
     font-family: 'Alegreya Sans SC', sans-serif;
 }
+.custom-select{
+    height: 55px !important;
+    margin-bottom: 15px;
+}
+
+@media screen and (max-width: 1024px){
+    .login-form {
+    width: 800px;
+    margin: 0 auto;
+    top: 10%;
+    position: absolute;
+    left:10%;
+
+    }
+    .login-form h1 {
+        font-size: 80px;
+        padding: 20px 0 20px 0;
+    }
+    .login-form input[type="password"],
+    .login-form input[type="text"] {
+        width: 100%;
+        padding: 30px;
+        border: 1px solid #dddddd;
+        margin-bottom: 80px;
+        box-sizing:border-box;
+        font-size: 30px;
+    }
+    .custom-select{
+        height: 105px !important;
+        margin-bottom: 15px;
+        font-size:30px !important;
+    }
+        .login-form input[type="submit"] {
+        width: 100%;
+        padding: 30px;
+        font-size: 30px;
+        margin: 80px 0 80px 0;
+        border: 0;
+    }
+    h2{
+        color:white;
+        font-family: 'Alegreya Sans SC', sans-serif;
+    }
+
+}
+

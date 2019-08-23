@@ -22,7 +22,39 @@
                     <h2 class="text-center">Browse our current inventory and place your order!</h2>
                     <br>
                 </div>
-            
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-transparent">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                          <ul class="navbar-nav">
+                            <li class="nav-item dropdown mr-auto">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Categories
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item drop-category" href="#">All</a>
+                                    <a class="dropdown-item drop-category" href="#">Essentials</a>
+                                    <a class="dropdown-item drop-category" href="#">Electronics</a>
+                                    <a class="dropdown-item drop-category" href="#">Furnitures</a>
+                                    <a class="dropdown-item drop-category" href="#">Other</a>
+                                </div>
+                            </li>
+                            <li class="nav-item mr-auto">
+                              <a class="nav-link" id="userCart" href="/cart">Cart</a>
+                            </li>
+                            <li class="nav-item dropdown mr-auto">
+                              <a class="nav-link dropdown-toggle" href="#" id="user-menu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Logout
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink user-menu">
+                                <a class="dropdown-item" href="/api/logout">Logout</a>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </nav>
+        </div>  
                 <div class="container">
                     <section class="main-section">
                     <div class="container">
